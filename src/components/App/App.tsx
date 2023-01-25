@@ -1,9 +1,10 @@
+import Weather from '../Weather/Weather';
 import './App.scss';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      Weather App
+      <Weather />
     </div>
   );
 }
