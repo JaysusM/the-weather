@@ -1,5 +1,5 @@
 import axios, { AxiosInstance, AxiosResponse } from "axios";
-import { WeatherData } from '../models/Weather';
+import { WeatherData } from '../models/WeatherData';
 
 class WeatherApi {
   private static axiosBase: AxiosInstance;
@@ -17,7 +17,7 @@ class WeatherApi {
   }
 
   getWeatherByCityName = (cityName: string): Promise<WeatherData> => {
-    return WeatherApi.axiosBase.get('/weather', {
+    return WeatherApi.axiosBase.get<WeatherData>('/weather', {
         params: {
             q: cityName
         }
