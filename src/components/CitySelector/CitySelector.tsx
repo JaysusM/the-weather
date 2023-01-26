@@ -1,18 +1,10 @@
-import { useRef } from 'react';
+import Input from '../Input/Input';
+import './CitySelector.scss';
 
 const CitySelector = ({ onCityChange }: CitySelectorProps) => {
 
-    const inputRef = useRef<HTMLInputElement>(null);
-
-    const onSubmit = (): void => {
-        if (!inputRef.current)
-            throw Error('Something wrong happened while changing city. Please, try again.');
-        onCityChange(inputRef.current.value);
-    }
-
     return <div className="city-selector-container">
-        <input type="text" ref={inputRef}></input>
-        <button onClick={onSubmit}>Change City</button>
+        <Input onSearch={ onCityChange } placeholder="Search by city name"></Input>
     </div>;
 
 }

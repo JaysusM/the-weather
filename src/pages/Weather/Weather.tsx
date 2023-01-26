@@ -13,9 +13,9 @@ const Weather = () => {
 
     return <div className='weather-page-wrapper'>
         { isLoading && <p>Loading...</p> }
+        <CitySelector onCityChange={setCity}/>
         { hasError && <ErrorComponent message={ errorMessage }></ErrorComponent> }
         { !isLoading && weather && <WeatherCard weather={ weather }/> }
-        <CitySelector onCityChange={setCity}/>
     </div>
 }
 

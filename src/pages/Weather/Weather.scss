@@ -1,8 +1,11 @@
 .weather-page-wrapper {
     background-color: #E2E4E8;
-    width: 100vw;
-    height: 100vh;
+    min-width: 100vw;
+    min-height: 100vh;
+    padding-bottom: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
+    display: flex;
+    flex-direction: column;
 }
