@@ -3,13 +3,14 @@ import CitySelector from '../../components/CitySelector/CitySelector';
 import ErrorComponent from '../../components/ErrorComponent/ErrorComponent';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 import WeatherCard from '../../components/WeatherCard/WeatherCard';
+import withGeolocation, { WithGeolocationProps } from '../../hocs/withGeolocation';
 import useWeather from './hooks/useWeather';
 import './Weather.scss';
 
-const Weather = () => {
+const Weather = ({ lat, lon }: WeatherProps) => {
 
-    const [city, setCity] = useState<string>('Málaga');
-    const [ weather, isLoading, hasError, errorMessage ] = useWeather(city);
+    const [city, setCity] = useState<string>('');
+    const [ weather, isLoading, hasError, errorMessage ] = useWeather(city, { lat, lon });
 
 
     return <div className='weather-page-wrapper'>
@@ -20,4 +21,6 @@ const Weather = () => {
     </div>
 }
 
-export default Weather;
+type WeatherProps = {} & WithGeolocationProps;
+
+export default withGeolocation(Weather);

@@ -25,6 +25,16 @@ class WeatherApi {
     })
       .then((response: AxiosResponse) => response.data);
   }
+
+  getWeatherByLatitudeAndLongitude = (latitude: number, longitude: number): Promise<WeatherData> => {
+    return WeatherApi.axiosBase.get<WeatherData>('/weather', {
+        params: {
+            lat: latitude,
+            lon: longitude
+        }
+    })
+      .then((response: AxiosResponse) => response.data);
+  }
 }
 
 export default WeatherApi;
