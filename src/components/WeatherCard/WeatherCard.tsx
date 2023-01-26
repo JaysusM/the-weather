@@ -1,5 +1,5 @@
 import { WeatherData } from "../../models/WeatherData";
-import { getWeatherIconUrl } from '../../utils/weather-utils';
+import { getUTCShiftedTime, getWeatherIconUrl } from '../../utils/weather-utils';
 import './WeatherCard.scss';
 
 export type WeatherCardProps = {
@@ -7,16 +7,22 @@ export type WeatherCardProps = {
 };
 
 const WeatherCard = ({ weather }: WeatherCardProps) => {
+
   return (
     <div className='weather-card-container'>
         <div className='weather-card-header'>
-            <h2>{ weather.name }</h2>
+            <h3 className='weather-card-header-title'><b>{ weather.name },</b> { weather.sys.country }</h3>
+            <p className='weather-card-header-subtitle'>Time: { getUTCShiftedTime(weather.timezone) }</p>
         </div>
-      <p>Weather: { weather.weather[0].main }</p>
-      <img
-        src={getWeatherIconUrl(weather.weather[0].icon)}
-        alt=""
-      />
+        <div className='weather-card-body'>
+          <img
+            src={getWeatherIconUrl(weather.weather[0].icon)}
+            alt=""
+          />
+          <h1>{ weather.main.temp.toFixed(0) }°</h1>
+          <p>{ weather.weather[0].main }</p>
+          
+      </div>
     </div>
   );
 };
