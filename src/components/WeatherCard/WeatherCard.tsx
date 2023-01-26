@@ -1,5 +1,6 @@
 import { WeatherData } from "../../models/WeatherData";
 import { getUTCShiftedTime, getWeatherIconUrl } from '../../utils/weather-utils';
+import WeatherCardDetails from './WeatherCardDetails/WeatherCardDetails';
 import './WeatherCard.scss';
 
 export type WeatherCardProps = {
@@ -21,7 +22,7 @@ const WeatherCard = ({ weather }: WeatherCardProps) => {
           />
           <h1>{ weather.main.temp.toFixed(0) }°</h1>
           <p>{ weather.weather[0].main }</p>
-          
+          <WeatherCardDetails weather={weather}></WeatherCardDetails>
       </div>
     </div>
   );

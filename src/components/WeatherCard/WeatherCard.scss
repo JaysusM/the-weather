@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    padding: 20px 40px;
+    padding: 40px;
     color: #aaa;
     box-shadow: 0px 5px 80px 0px;
 
@@ -55,6 +55,10 @@
         > p {
             margin-top: 0;
             font-weight: lighter;
+        }
+
+        > .weather-card-details {
+            margin-top: 20px;
         }
     }
 

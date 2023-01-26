@@ -1,0 +1,33 @@
+.box-container {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 25px;
+    padding: 25px;
+
+    > svg {
+        margin-right: 5px;
+    }
+
+    > .box-value {
+        flex: 1;
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+
+        > p {
+            font-weight: lighter;
+            margin: 0;
+            margin-bottom: 5px;
+        }
+
+        > b {
+            font-weight: bold;
+            margin: 0;
+        }
+    }
+
+}

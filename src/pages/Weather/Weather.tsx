@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import CitySelector from '../../components/CitySelector/CitySelector';
+import ErrorComponent from '../../components/ErrorComponent/ErrorComponent';
 import WeatherCard from '../../components/WeatherCard/WeatherCard';
 import useWeather from './hooks/useWeather';
 import './Weather.scss';
@@ -12,7 +13,7 @@ const Weather = () => {
 
     return <div className='weather-page-wrapper'>
         { isLoading && <p>Loading...</p> }
-        { hasError && <p>{ errorMessage }</p> }
+        { hasError && <ErrorComponent message={ errorMessage }></ErrorComponent> }
         { !isLoading && weather && <WeatherCard weather={ weather }/> }
         <CitySelector onCityChange={setCity}/>
     </div>
