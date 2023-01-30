@@ -42,6 +42,7 @@ To deploy the app, you can use `npm run build`. This will create a production-re
 - [TypeScript](https://www.typescriptlang.org/) - A typed superset of JavaScript
 - [OpenWeatherMap API](https://openweathermap.org/api) - A weather data API
 - [react-scripts](https://github.com/facebook/create-react-app) - A set of scripts for creating React apps with no build configuration
+- [FontAwesome](https://fontawesome.com/icons) - An icon's library
 
 ## Authors
 
@@ -54,3 +55,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 - [OpenWeatherMap](https://openweathermap.org/) for providing weather data API.
+- [FlatIcon](https://www.flaticon.com/) for providing the favicon image.
