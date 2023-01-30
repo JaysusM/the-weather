@@ -1,6 +1,7 @@
-import { WeatherData } from "../../models/WeatherData";
-import { getUTCShiftedTime, getWeatherIconUrl } from '../../utils/weather-utils';
+import { WeatherData } from '../../../models/WeatherData';
+import { getUTCShiftedTime, getWeatherIconUrl } from '../../../utils/weather-utils';
 import WeatherCardDetails from './WeatherCardDetails/WeatherCardDetails';
+import Card from '../../ui/Card/Card';
 import './WeatherCard.scss';
 
 export type WeatherCardProps = {
@@ -10,7 +11,7 @@ export type WeatherCardProps = {
 const WeatherCard = ({ weather }: WeatherCardProps) => {
 
   return (
-    <div className='weather-card-container'>
+    <Card className='weather-card'>
         <div className='weather-card-header'>
             <h3 className='weather-card-header-title'><b>{ weather.name },</b> { weather.sys.country }</h3>
             <p className='weather-card-header-subtitle'>Time: { getUTCShiftedTime(weather.timezone) }</p>
@@ -24,7 +25,7 @@ const WeatherCard = ({ weather }: WeatherCardProps) => {
           <p>{ weather.weather[0].main }</p>
           <WeatherCardDetails weather={weather}></WeatherCardDetails>
       </div>
-    </div>
+    </Card>
   );
 };
 

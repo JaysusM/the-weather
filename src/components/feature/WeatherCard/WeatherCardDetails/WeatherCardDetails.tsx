@@ -1,6 +1,6 @@
 import { faTemperatureArrowDown, faTemperatureArrowUp, faWater, faWind } from '@fortawesome/free-solid-svg-icons';
-import { WeatherData } from '../../../models/WeatherData'
-import Box from '../../Box/Box';
+import { WeatherData } from '../../../../models/WeatherData'
+import Box from '../../../ui/Box/Box';
 import './WeatherCardDetails.scss';
 
 const WeatherCardDetails = ({ weather }: WeatherCardDetailsProps) => {

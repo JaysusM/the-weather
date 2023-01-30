@@ -1,4 +1,4 @@
-import Input from '../Input/Input';
+import Input from '../../ui/Input/Input';
 import './CitySelector.scss';
 
 const CitySelector = ({ onCityChange }: CitySelectorProps) => {

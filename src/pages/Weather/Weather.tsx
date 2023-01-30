@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import CitySelector from '../../components/CitySelector/CitySelector';
-import ErrorComponent from '../../components/ErrorComponent/ErrorComponent';
-import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
-import WeatherCard from '../../components/WeatherCard/WeatherCard';
+import CitySelector from '../../components/feature/CitySelector/CitySelector';
+import WeatherCard from '../../components/feature/WeatherCard/WeatherCard';
+import ErrorComponent from '../../components/utils/ErrorComponent/ErrorComponent';
+import LoadingSpinner from '../../components/utils/LoadingSpinner/LoadingSpinner';
 import withGeolocation, { WithGeolocationProps } from '../../hocs/withGeolocation';
 import useWeather from './hooks/useWeather';
 import './Weather.scss';

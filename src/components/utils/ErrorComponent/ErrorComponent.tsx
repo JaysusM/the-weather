@@ -1,14 +1,15 @@
 import { faFaceSadTear } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Card from '../../ui/Card/Card';
 import './ErrorComponent.scss';
 
 const ErrorComponent = ({ message }: ErrorComponentProps) => {
 
-    return <div className='error-wrapper'>
+    return <Card className="error-card">
         <h3>Something wrong happened</h3>
         <FontAwesomeIcon icon={ faFaceSadTear } />
         { message && <p>Error:  { message }</p> }
-    </div>;
+    </Card>;
 }
 
 type ErrorComponentProps = {

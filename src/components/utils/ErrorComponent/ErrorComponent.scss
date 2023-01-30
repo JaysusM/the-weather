@@ -1,0 +1,15 @@
+.error-card {
+    > p, > h3 { 
+        color: black;
+        text-transform: capitalize;
+    }
+
+    > h3 {
+        font-family: 'Prompt';
+    }
+
+    > svg {
+        height: 50px;
+        margin: 15px 0;
+    }
+}
