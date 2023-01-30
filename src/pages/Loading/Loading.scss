@@ -1,7 +1,7 @@
 .loading-page {
     background-color: #E2E4E8;
     min-width: 100vw;
-    min-height: 100vh;
+    min-height: calc(100vh - 25px);
     padding-bottom: 25px;
     display: flex;
     justify-content: center;
