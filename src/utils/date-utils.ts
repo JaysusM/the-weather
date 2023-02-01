@@ -1,12 +1,7 @@
-export const getTime = (date: Date): string => {
-    return ('0' + date.getHours()).slice(-2) + ':' + ('0' + date.getMinutes()).slice(-2);
-}
-
-export const getUTCShiftedTime = (timeShiftInSeconds: number): string => {
-    const now = new Date();
+export const getUTCShiftedTime = (timeShiftInSeconds: number, now = new Date()): string => {
     const utcDate = new Date(now.getUTCFullYear(),now.getUTCMonth(), now.getUTCDate(), 
         now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds() + timeShiftInSeconds, now.getUTCMilliseconds());
 
-    return utcDate.getHours() + ':' + ('0' + utcDate.getMinutes()).slice(-2);
+    return ('0' + utcDate.getHours()).slice(-2) + ':' + ('0' + utcDate.getMinutes()).slice(-2);
 }
   

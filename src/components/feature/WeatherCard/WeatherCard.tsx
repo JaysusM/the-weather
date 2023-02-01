@@ -1,4 +1,4 @@
-import { WeatherData } from '../../../models';
+import { WeatherData, WeatherDataItem } from '../../../models';
 import { getUTCShiftedTime } from '../../../utils/date-utils';
 import WeatherCardDetails from './WeatherCardDetails/WeatherCardDetails';
 import Card from '../../ui/Card/Card';
@@ -11,6 +11,8 @@ export type WeatherCardProps = {
 
 const WeatherCard = ({ weather }: WeatherCardProps) => {
 
+  const currentWeather: WeatherDataItem = weather.list[0];
+
   return (
     <Card className='weather-card'>
         <div className='weather-card-header'>
@@ -19,7 +21,7 @@ const WeatherCard = ({ weather }: WeatherCardProps) => {
         </div>
         <div className='weather-card-body'>
           <WeatherCardMain weather={weather} />
-          <WeatherCardDetails weather={weather}></WeatherCardDetails>
+          <WeatherCardDetails weather={currentWeather}></WeatherCardDetails>
       </div>
     </Card>
   );
