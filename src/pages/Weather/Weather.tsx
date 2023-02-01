@@ -17,7 +17,7 @@ const Weather = ({ lat, lon }: WeatherProps) => {
         <CitySelector onCityChange={setCity}/>
         { isLoading && <LoadingSpinner /> }
         { hasError && <ErrorComponent message={ errorMessage }></ErrorComponent> }
-        { !isLoading && weather && <WeatherCard weather={ weather }/> }
+        { !isLoading && weather && <WeatherCard weather={ weather } /> }
     </div>
 }
 

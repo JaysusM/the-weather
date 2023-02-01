@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import WeatherApi from '../../../services/weather-api';
-import { WeatherData } from '../../../models/WeatherData';
+import { WeatherData } from '../../../models';
 import { AxiosError } from 'axios';
 
 type WeatherStatus = {
@@ -17,9 +17,9 @@ const useWeather = (cityName: string, currentLocation: { lat?: number, lon?: num
 
     useEffect(() => {
 
-        const getWeather = () => {
+        const getWeather = (): Promise<WeatherData> => {
             if (cityName?.length > 0)
-                return weatherApi.getWeatherByCityName(cityName);
+                return weatherApi.getWeatherByCityName(cityName)
             else if (currentLocation.lat && currentLocation.lon)
                 return weatherApi.getWeatherByLatitudeAndLongitude(currentLocation.lat, currentLocation.lon);
             

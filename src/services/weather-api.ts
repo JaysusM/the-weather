@@ -1,5 +1,5 @@
 import axios, { AxiosInstance, AxiosResponse } from "axios";
-import { WeatherData } from '../models/WeatherData';
+import { WeatherData } from '../models';
 
 class WeatherApi {
   private static axiosBase: AxiosInstance;
@@ -18,19 +18,21 @@ class WeatherApi {
   }
 
   getWeatherByCityName = (cityName: string): Promise<WeatherData> => {
-    return WeatherApi.axiosBase.get<WeatherData>('/weather', {
+    return WeatherApi.axiosBase.get<WeatherData>('/forecast', {
         params: {
-            q: cityName
+            q: cityName,
+            cnt: 4
         }
     })
       .then((response: AxiosResponse) => response.data);
   }
 
   getWeatherByLatitudeAndLongitude = (latitude: number, longitude: number): Promise<WeatherData> => {
-    return WeatherApi.axiosBase.get<WeatherData>('/weather', {
+    return WeatherApi.axiosBase.get<WeatherData>('/forecast', {
         params: {
             lat: latitude,
-            lon: longitude
+            lon: longitude,
+            cnt: 4
         }
     })
       .then((response: AxiosResponse) => response.data);

@@ -1,7 +1,28 @@
 export type WeatherData = {
-  coord: {
-    lon: number;
-    lat: number;
+  cod: string;
+  message: number;
+  cnt: number;
+  list: WeatherDataItem[];
+  city: {
+    id: number;
+    name: string;
+    country: string;
+    timezone: number;
+  };
+};
+
+export type WeatherDataItem = {
+  dt: number;
+  main: {
+    temp: number;
+    feels_like: number;
+    temp_min: number;
+    temp_max: number;
+    pressure: number;
+    sea_level: number;
+    grnd_level: number;
+    humidity: number;
+    temp_kf: number;
   };
   weather: {
     id: number;
@@ -9,45 +30,21 @@ export type WeatherData = {
     description: string;
     icon: string;
   }[];
-  base: string;
-  main: {
-    temp: number;
-    feels_like: number;
-    pressure: number;
-    humidity: number;
-    temp_min: number;
-    temp_max: number;
-    sea_level: number;
-    grnd_level: number;
+  clouds: {
+    all: number;
   };
-  visibility: number;
   wind: {
     speed: number;
     deg: number;
     gust: number;
   };
-  clouds: {
-    all: number;
+  visibility: number;
+  pop: number;
+  rain?: {
+    [key: string]: number;
   };
-  rain: {
-    "1h": number;
-    "3h": number;
-  };
-  snow: {
-    "1h": number;
-    "3h": number;
-  };
-  dt: number;
   sys: {
-    type: number;
-    id: number;
-    message: number;
-    country: string;
-    sunrise: number;
-    sunset: number;
+    pod: string;
   };
-  timezone: number;
-  id: number;
-  name: string;
-  cod: number;
+  dt_txt: string;
 };
